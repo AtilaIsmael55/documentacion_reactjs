@@ -1,4 +1,4 @@
-import Boton from './componentes/boton.jsx';
+import Boton from './componentes/Practica.jsx';
 import './App.css';
 
 function App() {
