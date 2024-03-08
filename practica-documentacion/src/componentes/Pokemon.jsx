@@ -11,8 +11,10 @@ function Pokemon (){
     const handleSiguiente = () => {
         setId (id + 1);}
 
+    console.log(id);
+
     useEffect(() => {
-        fetch("https://pokeapi.co/api/v2/pokemon/1" )
+        fetch(`https://pokeapi.co/api/v2/pokemon/${id}` )
         .then ((resp) => resp.json ())
         .then ((data) => {
             setPokemon(data);
@@ -25,8 +27,9 @@ function Pokemon (){
                 <h2>{pokemon.name}</h2>
                 <p>ID: {id}</p>
                 <img src = {pokemon.sprites.front_default} alt={pokemon.name} />
+                <img src = {pokemon.sprites.back_default} alt={pokemon.name} />
                 <br />
-                {id > 1 && <button onClick={handleAnterior}>Anterior</button>}
+                {id > 1  && <button onClick={handleAnterior}>Anterior</button>}
                 
                 <button onClick={handleSiguiente}>Siguiente</button>
             </div>
